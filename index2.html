@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro-Personality Predictor</title>
+    <link rel="stylesheet" href="style2.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <main class="w-full max-w-2xl mx-auto">
+        <div class="glass-card rounded-2xl p-6 sm:p-10 text-center shadow-2xl">
+            <div class="mb-8">
+                <h1 class="text-4xl sm:text-5xl font-bold text-white mb-2">Astro-Personality Predictor</h1>
+                <p class="text-lg text-gray-300">Describe your personality, and we'll reveal the stars' alignment for you.</p>
+            </div>
+
+            <div class="space-y-6">
+                <textarea id="personalityInput" rows="6"
+                    class="w-full p-4 bg-gray-900/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all"
+                    placeholder="Tell us about yourself... Are you adventurous, caring, organized, creative?"></textarea>
+                <button id="predictButton" class="predict-btn w-full sm:w-auto px-12 py-3 text-lg font-semibold text-white rounded-lg">
+                    Predict My Stars
+                </button>
+            </div>
+
+            <div id="resultsSection" class="mt-8 hidden">
+                <div id="loadingSpinner" class="flex justify-center items-center my-6">
+                    <svg class="spinner h-10 w-10 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <p class="ml-4 text-lg text-gray-300">Analyzing the cosmos for you...</p>
+                </div>
+
+                <div id="predictionContent" class="hidden text-left p-6 bg-gray-900/70 rounded-lg border border-gray-700">
+                    <h2 class="text-2xl font-bold text-blue-300 mb-4">Your Cosmic Blueprint:</h2>
+                    <p id="predictionText" class="text-gray-200 leading-relaxed"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script2.js"></script>
+</body>
+</html>
